@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bird Jump 2D</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="gameCanvas"></canvas>
+        <div id="overlay">
+            <div id="score">Score: <span id="scoreValue">0</span></div>
+            <div id="highScore">High Score: <span id="highScoreValue">0</span></div>
+            <div id="startScreen" class="screen">
+                <h1>Bird Jump 2D</h1>
+                <p>Press SPACE or Click to start</p>
+                <p class="power-ups-info">
+                    Power-ups:<br>
+                    🛡️ Shield - Temporary invincibility<br>
+                    2️⃣ Double Points - Score twice the points<br>
+                    ⏱️ Slow Motion - Slows down the game
+                </p>
+            </div>
+            <div id="gameOverScreen" class="screen hidden">
+                <h2>Game Over!</h2>
+                <p>Your Score: <span id="finalScore">0</span></p>
+                <button id="restartButton">Play Again</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/background.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bird.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/pipe.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/powerup.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/audio.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>
